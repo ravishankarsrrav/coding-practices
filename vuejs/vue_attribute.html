@@ -1,0 +1,40 @@
+<html>
+<style>
+.red-color{
+	color :  red;
+}
+.is_loading{
+	background-color: green;
+}
+</style>
+<body>
+<div id="root">
+
+<button id="add" type="submit" :title='title' :class= "{'is_loading' : isloading}" @click="onclick"> Add to list</button>
+
+</div>
+</body>
+<script src="C:/Users/Ravishankar S R/Documents/vuejs/vue2.js"></script>
+<script>
+let data = {
+	title : 'click me',
+	classname : 'red-color',
+	isloading : false
+	
+};
+let app = new Vue({
+	el : '#root',
+	data : data,
+	methods : {
+		onclick(){
+			this.isloading = (this.isloading ? false : true);
+		}
+	}
+	
+	
+});
+
+// app.names.push({'name' : "nithi","age" : "18"});
+// app.ages.pop(1);
+</script>
+</html>

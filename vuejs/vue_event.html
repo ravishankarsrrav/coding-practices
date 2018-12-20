@@ -1,0 +1,45 @@
+<html>
+<style>
+</style>
+<body>
+<div id="root">
+<ul>	
+<li v-for= "name in names">my name is {{name.name}} and I'm {{name.age}}.</li>
+</ul>
+
+<hr>
+<ul>	
+<li v-for= "age in ages" v-text= "age" track-by="$index" ></li>
+</ul>
+<input type="text" id="addtext" v-model='newName' @keyup='onclick'/>
+<button id="add" type="submit" v-on:click='onclick'> Add to list</button>
+
+</div>
+</body>
+<script src="C:/Users/Ravishankar S R/Documents/vuejs/vue2.js"></script>
+<script>
+let data = {
+	newName : '',
+	names : [{'name' : 'hi','age' : '24'},{'name' : 'heee','age' : '29'}],
+	ages : [1,2,3,4]
+};
+let app = new Vue({
+	el : '#root',
+	data : data,
+	mounted(){
+		
+	},
+	methods:{
+		onclick(){
+			this.ages.push(this.newName);
+			this.newName = '';
+
+		}
+	}
+	
+});
+
+// app.names.push({'name' : "nithi","age" : "18"});
+// app.ages.pop(1);
+</script>
+</html>

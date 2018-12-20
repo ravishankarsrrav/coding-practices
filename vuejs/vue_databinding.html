@@ -1,0 +1,20 @@
+<html>
+<style>
+</style>
+<body>
+<div id="root">
+<input id= "test" type= "text" v-model = "message" />
+<p> the value of input is {{message}}</p>
+</div>
+</body>
+<script src="C:/Users/Ravishankar S R/Documents/vuejs/vue.js"></script>
+<script>
+let data = {
+	message : "hi"
+};
+new Vue({
+	el : '#root',
+	data : data
+})
+</script>
+</html>
